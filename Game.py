@@ -1,17 +1,25 @@
-import Countries
+import json
 import random as rd
 import time
 import datetime as dt
-today = dt.datetime.today()
-scorelist = open("scores.txt", "a")
+    
 
-print("Remember to capitalize first letter!")
+today = dt.date.today()
+scorelist = open("scores.txt", "a")
+print("Remember to capitalize properly!\n")
 
 def answerCountry():
     score = 0
     while 2 < 3:
-        country, capital = rd.choice(list(Countries.Countries.items()))
+        with open("Countries.json", "r") as f:
+            data = json.load(f)
+        question = data["countries"]
+        rnd = rd.randint(0, len(question)-1)
+        country = data["countries"][rnd]["country"]
+        capital = data["countries"][rnd]["capital"]
+        
         print(capital)
+        
         answer = input("> ")
         if answer == country:
             print("Correct!")
@@ -30,8 +38,15 @@ def answerCountry():
 def answerCapital():
     score = 0
     while 2 < 3:
-        country, capital = rd.choice(list(Countries.Countries.items()))
+        with open("Countries.json", "r") as f:
+            data = json.load(f)
+        question = data["countries"]
+        rnd = rd.randint(0, len(question)-1)
+        country = data["countries"][rnd]["country"]
+        capital = data["countries"][rnd]["capital"]
+        
         print(country)
+        
         answer = input("> ")
         if answer == capital:
             print("Correct!")

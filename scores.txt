@@ -1,2 +1,3 @@
 This is the scoreboard for Country Game:
-
+Date: 2021-11-01 - Game: Guess the country - Score: 0
+Date: 2021-11-01 - Game: Guess the country - Score: 1
