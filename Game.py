@@ -3,7 +3,7 @@ import random as rd
 import time
 import datetime as dt
 
-#hello
+#hello, back at it again
 
 today = dt.date.today()
 scorelist = open("scores.txt", "a")
